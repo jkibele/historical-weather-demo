@@ -179,8 +179,7 @@ def cli():
 @click.argument('city', type=str)
 def days(city):
     """
-    Mean number of days per year the given city had non-zero precipitation (either
-    snow or rain) based on the entire 10 year period.
+    Mean number of days per year the given city had non-zero precipitation.
     """
     df = extract_data(CSV_FILE).pipe(augment_data)
     json_out = days_of_precip(df, city)
@@ -192,6 +191,9 @@ def days(city):
 @click.argument('month', type=int)
 @click.argument('day', default=0)
 def chance(city, month, day):
+    """
+    Predict how likely it is a given city will experience rain or snow for a given month or day.
+    """
     df = extract_data(CSV_FILE).pipe(augment_data)
     json_out = chance_of_precip(df, city, month, day)
     click.echo(json_out)
