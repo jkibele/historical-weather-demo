@@ -1,0 +1,10 @@
+[project]
+name = "historical-weather"
+version = "0.1.0"
+description = "CLI program that implements two functions, the average yearly days of precipitation for a particular city (days-of-precip) and a prediction of how likely a given city will experience precipitation (chance-of-precip)."
+authors = ["Jared Kibele <jkibele@gmail.com>"]
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1.7",
+    "pandas>=2.2.3",
+]
